@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>For My Love ❤</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { 
+      --glass: rgba(255,255,255,0.08);
+      --primary-gradient: linear-gradient(135deg,#ec4899 0%,#a855f7 100%);
+      --secondary-gradient: linear-gradient(135deg,#ff6b6b 0%,#ee5a24 100%);
+    }
+    html,body{height:100%;margin:0;}
+    body{
+      font-family:'Poppins',sans-serif;
+      background:var(--primary-gradient);
+      color:white;
+      overflow-x:hidden;
+      position:relative;
+    }
+    body::before {
+      content:'';
+      position:fixed;
+      top:0;
+      left:0;
+      right:0;
+      bottom:0;
+      background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+      pointer-events:none;
+      z-index:-1;
+      opacity:0.3;
+    }
+    @keyframes fadeInUp{
+      from{opacity:0;transform:translateY(20px);}
+      to{opacity:1;transform:translateY(0);}
+    }
+    .fade-in{animation:fadeInUp .8s ease both;}
+    @keyframes tinyBounce{
+      0%,100%{transform:translateY(0) scale(1);}
+      50%{transform:translateY(-8px) scale(1.05);}
+    }
+    .tiny-bounce{animation:tinyBounce 3s ease-in-out infinite;}
+    @keyframes fall{
+      0%{transform:translateY(-10vh) translateX(0) rotate(0deg);opacity:1;}
+      100%{transform:translateY(120vh) translateX(var(--drift)) rotate(720deg);opacity:0;}
+    }
+    @keyframes pulse {
+      0%,100%{transform:scale(1);opacity:1;}
+      50%{transform:scale(1.1);opacity:0.8;}
+    }
+    @keyframes float {
+      0%,100%{transform:translateY(0px) rotate(0deg);}
+      50%{transform:translateY(-10px) rotate(5deg);}
+    }
+    .emoji{
+      position:fixed;
+      top:-10px;
+      pointer-events:none;
+      will-change:transform,opacity;
+      z-index:60;
+      animation:fall linear forwards;
+      text-shadow:0 8px 24px rgba(0,0,0,0.3);
+      filter:drop-shadow(0 4px 12px rgba(0,0,0,0.2));
+    }
+    .glass{
+      background:var(--glass);
+      backdrop-filter:blur(12px) saturate(180%);
+      border:1px solid rgba(255,255,255,0.12);
+      border-radius:20px;
+      box-shadow:0 20px 40px rgba(0,0,0,0.1),0 0 0 1px rgba(255,255,255,0.05);
+    }
+    .secret-input{
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.1);
+      color:white;
+      transition:all 0.3s ease;
+    }
+    .secret-input:focus{
+      outline:none;
+      border-color:rgba(255,255,255,0.3);
+      box-shadow:0 0 0 3px rgba(255,255,255,0.1);
+    }
+    @media(max-width:640px){.title{font-size:2.5rem;}}
+    .show {display:block !important;animation:fadeInUp 0.6s ease both;}
+    .dancing-font{font-family:'Dancing Script',cursive;}
+    .music-control {
+      position:fixed;
+      top:20px;
+      right:20px;
+      z-index:100;
+      background:var(--glass);
+      backdrop-filter:blur(10px);
+      border:1px solid rgba(255,255,255,0.1);
+      border-radius:50%;
+      width:50px;
+      height:50px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      transition:all 0.3s ease;
+      box-shadow:0 4px 15px rgba(0,0,0,0.2);
+    }
+    .music-control:hover {
+      transform:scale(1.1);
+      background:rgba(255,255,255,0.15);
+    }
+    .floating-hearts {
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      pointer-events:none;
+      z-index:40;
+    }
+    .floating-heart {
+      position:absolute;
+      animation:float 6s ease-in-out infinite;
+      opacity:0.7;
+      font-size:24px;
+    }
+    .glow-text {
+      text-shadow:0 0 20px rgba(255,255,255,0.5),
+                  0 0 40px rgba(255,255,255,0.3),
+                  0 0 60px rgba(255,255,255,0.2);
+    }
+  </style>
+</head>
+<body>
+  <main class="min-h-screen flex items-center justify-center p-6">
+    <div class="w-full max-w-3xl space-y-8 fade-in">
+      <header class="text-center space-y-4">
+        <h1 class="title text-5xl md:text-6xl font-extrabold tiny-bounce drop-shadow-lg dancing-font glow-text">Happy Birthday My Love! 🎉</h1>
+        <p class="opacity-90 text-lg">You make every day brighter since <strong class="text-yellow-300">Nov 30, 2023</strong></p>
+        <div class="w-24 h-1 bg-white/30 rounded-full mx-auto"></div>
+      </header>
+      <section class="glass p-8">
+        <h2 class="text-3xl font-semibold mb-6 text-center dancing-font">Our Beautiful Journey</h2>
+        <div class="grid grid-cols-3 gap-6">
+          <div class="rounded-xl p-6 text-center glass transform hover:scale-105 transition-transform duration-300">
+            <div id="days" class="text-4xl md:text-5xl font-bold text-yellow-300">0</div>
+            <div class="text-sm opacity-80 mt-2">Days Together</div>
+          </div>
+          <div class="rounded-xl p-6 text-center glass transform hover:scale-105 transition-transform duration-300">
+            <div id="hours" class="text-4xl md:text-5xl font-bold text-pink-300">0</div>
+            <div class="text-sm opacity-80 mt-2">Hours of Love</div>
+          </div>
+          <div class="rounded-xl p-6 text-center glass transform hover:scale-105 transition-transform duration-300">
+            <div id="minutes" class="text-4xl md:text-5xl font-bold text-purple-300">0</div>
+            <div class="text-sm opacity-80 mt-2">Minutes of Joy</div>
+          </div>
+        </div>
+      </section>
+      <section class="glass p-8">
+        <h3 class="text-3xl font-semibold mb-6 text-center dancing-font">Special Surprises 💌</h3>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+          <button id="hug-btn" class="flex items-center justify-center gap-3 py-4 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 transition transform hover:scale-105 shadow-lg hover:shadow-xl">
+            <i data-feather="heart" class="w-5 h-5"></i>
+            <span>Virtual Hug</span>
+          </button>
+          <button id="kiss-btn" class="flex items-center justify-center gap-3 py-4 rounded-xl bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-400 hover:to-rose-400 transition transform hover:scale-105 shadow-lg hover:shadow-xl">
+            <i data-feather="smile" class="w-5 h-5"></i>
+            <span>Virtual Kiss</span>
+          </button>
+          <button id="message-btn" class="flex items-center justify-center gap-3 py-4 rounded-xl bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-400 hover:to-orange-400 transition transform hover:scale-105 shadow-lg hover:shadow-xl">
+            <i data-feather="message-square" class="w-5 h-5"></i>
+            <span>Sweet Message</span>
+          </button>
+          <button id="memory-btn" class="flex items-center justify-center gap-3 py-4 rounded-xl bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-500 hover:to-blue-500 transition transform hover:scale-105 shadow-lg hover:shadow-xl">
+            <i data-feather="star" class="w-5 h-5"></i>
+            <span>Special Memory</span>
+          </button>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4 items-stretch">
+          <input id="secret-input" class="secret-input flex-1 px-5 py-4 rounded-xl text-lg" type="text" placeholder="Type your secret love message..." />
+          <button id="send-secret" class="py-4 px-6 rounded-xl bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-400 hover:to-pink-400 transition transform hover:scale-105 shadow-lg text-lg font-semibold">Send Secret 💖</button>
+        </div>
+      </section>
+      <section id="surprise" class="glass p-8 hidden">
+        <div class="text-center">
+          <p id="surprise-text" class="text-xl leading-relaxed dancing-font mb-4"></p>
+          <div class="w-16 h-1 bg-white/30 rounded-full mx-auto mb-4"></div>
+          <p class="text-sm opacity-70">Your love makes every moment magical ✨</p>
+        </div>
+      </section>
+</div>
+  </main>
+  <div id="emoji-root"></div>
+  <div class="floating-hearts" id="floating-hearts"></div>
+  <div class="music-control" id="music-control" title="Play/Pause Music">
+    <i data-feather="music" class="w-6 h-6"></i>
+  </div>
+  <script>
+    feather.replace();
+
+    // Background music
+    const audio = new Audio('https://cdn.pixabay.com/download/audio/2021/10/25/audio_172d7dec2c.mp3?filename=soft-piano-100-bpm-121529.mp3');
+    audio.loop = true;
+    let isPlaying = false;
+
+    const musicControl = document.getElementById('music-control');
+    musicControl.addEventListener('click', () => {
+      if (isPlaying) {
+        audio.pause();
+        musicControl.innerHTML = '<i data-feather="music" class="w-6 h-6"></i>';
+      } else {
+        audio.play().catch(e => console.log('Audio play failed:', e));
+        musicControl.innerHTML = '<i data-feather="pause" class="w-6 h-6"></i>';
+      }
+      isPlaying = !isPlaying;
+      feather.replace();
+    });
+
+    // Floating hearts
+    function createFloatingHearts() {
+      const container = document.getElementById('floating-hearts');
+      for (let i = 0; i < 15; i++) {
+        const heart = document.createElement('div');
+        heart.className = 'floating-heart';
+        heart.textContent = '💖';
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.top = Math.random() * 100 + 'vh';
+        heart.style.animationDelay = Math.random() * 6 + 's';
+        heart.style.fontSize = (16 + Math.random() * 24) + 'px';
+        container.appendChild(heart);
+      }
+    }
+
+    // Timer
+    const START = new Date("2023-11-30T00:00:00");
+    function updateTimer(){
+      const now = new Date();
+      const diff = now - START;
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      document.getElementById('days').textContent = days;
+      document.getElementById('hours').textContent = hours;
+      document.getElementById('minutes').textContent = minutes;
+    }
+    updateTimer();
+    setInterval(updateTimer, 1000);
+
+    // Enhanced emoji rain with more effects
+    const emojiMap = { 
+      hug:"🤗", kiss:"💋", heart:"❤️", star:"⭐",
+      sparkle:"✨", flower:"🌸", fire:"🔥", gift:"🎁"
+    };
+
+    function spawnEmoji(char){
+      const e=document.createElement('div');
+      e.className='emoji';
+      e.textContent=char;
+      e.style.left=Math.random()*95+'vw';
+      e.style.fontSize=24+Math.random()*48+'px';
+      e.style.animationDuration=(4+Math.random()*4)+'s';
+      e.style.setProperty('--drift',(Math.random()-0.5)*180+'px');
+      e.style.opacity=0.8+Math.random()*0.2;
+      document.body.appendChild(e);
+      e.addEventListener('animationend',()=>e.remove());
+    }
+
+    function emojiRain(type,count=80){
+      const char=emojiMap[type]||emojiMap.heart;
+      const additionalChars = ['✨','💖','🌟','🎉'];
+      for(let i=0;i<count;i++){
+        setTimeout(()=>{
+          spawnEmoji(char);
+          // Add some variety
+          if (i % 5 === 0) {
+            spawnEmoji(additionalChars[Math.floor(Math.random() * additionalChars.length)]);
+          }
+        },i*40);
+      }
+    }
+
+    const surpriseEl=document.getElementById('surprise');
+    const surpriseTextEl=document.getElementById('surprise-text');
+
+    const messages={
+      "hug-btn":"Sending you the warmest, most loving hug 🤗 wrapped in all my affection and care.",
+      "kiss-btn":"Mwah!I could spend forever chasing that moment right before our lips meet. 💋💞 My heart beats only for you.",
+      "message-btn":"You're my forever person, my soulmate, my everything. My heart belongs to you, always and forever and The way you look at me makes ordinary days feel cinematic ❤️",
+      "memory-btn":"That magical night we laughed until tears streamed down our faces — forever etched in my heart as my favorite memory 🌙💫"
+    };
+
+    function showMessage(id,type,count){
+      surpriseTextEl.textContent=messages[id];
+      surpriseEl.classList.remove('hidden');
+      surpriseEl.classList.add('show');
+      emojiRain(type,count);
+      surpriseEl.scrollIntoView({behavior:"smooth"});
+      
+      // Add subtle background pulse effect
+      document.body.style.animation = 'pulse 2s ease';
+      setTimeout(() => {
+        document.body.style.animation = '';
+      }, 2000);
+    }
+
+    document.getElementById('hug-btn').onclick=()=>showMessage('hug-btn','hug',60);
+    document.getElementById('kiss-btn').onclick=()=>showMessage('kiss-btn','kiss',70);
+    document.getElementById('message-btn').onclick=()=>showMessage('message-btn','heart',80);
+    document.getElementById('memory-btn').onclick=()=>showMessage('memory-btn','star',60);
+
+    // Enhanced Secret Message logic
+    document.getElementById('send-secret').onclick=()=>{
+      const input=document.getElementById('secret-input');
+      const text=input.value.trim();
+      if(!text){
+        input.animate([
+          {transform:'translateX(0)', opacity:1},
+          {transform:'translateX(-10px)', opacity:0.8},
+          {transform:'translateX(10px)', opacity:0.8},
+          {transform:'translateX(0)', opacity:1}
+        ],{duration:400, easing:'ease-in-out'});
+        return;
+      }
+      surpriseEl.classList.remove('hidden');
+      surpriseEl.classList.add('show');
+      surpriseTextEl.textContent = "💌 Your Secret Message: " + text;
+      emojiRain('heart',120);
+      input.value='';
+      setTimeout(()=>{
+        surpriseEl.scrollIntoView({behavior:"smooth", block:"center"});
+        if (!isPlaying) {
+          musicControl.click(); // Auto-play music on first interaction
+        }
+      },300);
+    };
+
+    document.getElementById('secret-input').addEventListener('keydown',e=>{
+      if(e.key==='Enter'){e.preventDefault();document.getElementById('send-secret').click();}
+    });
+
+    // Initialize floating hearts
+    createFloatingHearts();
+
+    // Auto-start music after user interaction
+    document.addEventListener('click', function initMusic() {
+      if (!isPlaying) {
+        musicControl.click();
+      }
+      document.removeEventListener('click', initMusic);
+    }, { once: true });
+  </script>
+</body>
+</html>
